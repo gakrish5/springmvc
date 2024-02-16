@@ -25,6 +25,7 @@ public class BMIController {
         double bmi = (weightInPounds / (heightInInches * heightInInches)) * 703;
         double roundedBMI = Math.round(bmi * 100.0) / 100.0;
         model.addAttribute("bmi", roundedBMI);
+        
         return "result";
     }
 }
