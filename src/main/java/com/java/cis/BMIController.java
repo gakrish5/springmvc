@@ -3,6 +3,8 @@ package com.java.cis;
 import java.util.Locale;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,12 +15,12 @@ public class BMIController {
     /**
      * Simply selects the home view to render by returning its name.
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping(value = "/")
     public String input(Locale locale, Model model) {
         System.out.println("Home Page Requested, locale = " + locale);
         return "input";
     }
-    @RequestMapping(value = "/bmi", method = RequestMethod.POST)
+    @PostMapping(value = "/bmi")
     public String result(@RequestParam("height") double heightInInches,
                          @RequestParam("weight") double weightInPounds,
                          Model model) {
