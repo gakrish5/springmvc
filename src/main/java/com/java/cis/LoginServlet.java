@@ -11,7 +11,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         // You should validate the username and password here
         // For simplicity, we'll assume a hardcoded valid username and password
-        if (username.equals("yourusername") && password.equals("yourpassword")) {
+        if ("yourusername".equals(username) && "yourpassword".equals(password)) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
             response.sendRedirect("home.html");
